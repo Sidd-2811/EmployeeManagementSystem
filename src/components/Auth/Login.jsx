@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 
-const Login = () => {
+const Login = ({handleLogin}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  // console.log(handleLogin)
   // to handle form submission (also known as two way binding)
   const submitHandler = (e) => {
     e.preventDefault();
+    handleLogin(email, password);
     console.log(`email : ${email}`);
     console.log(`pass : ${password}`);
 
